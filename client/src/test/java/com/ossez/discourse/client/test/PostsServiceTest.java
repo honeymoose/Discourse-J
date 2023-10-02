@@ -1,6 +1,7 @@
 package com.ossez.discourse.client.test;
 
 import com.google.inject.Inject;
+import com.ossez.discourse.client.service.PostsService;
 import com.ossez.discourse.client.service.TopicsService;
 import com.ossez.discourse.common.exception.WxErrorException;
 import org.junit.jupiter.api.Test;
@@ -15,10 +16,10 @@ import org.slf4j.LoggerFactory;
  * @author YuCheng
  */
 @TestInstance(Lifecycle.PER_CLASS)
-public class TopicsServiceTest extends TestBase {
-    private static final Logger log = LoggerFactory.getLogger(TopicsServiceTest.class);
+public class PostsServiceTest extends TestBase {
+    private static final Logger log = LoggerFactory.getLogger(PostsServiceTest.class);
     @Inject
-    protected TopicsService topicsService;
+    protected PostsService postsService;
 
     /**
      * Test Create Menu
@@ -28,7 +29,7 @@ public class TopicsServiceTest extends TestBase {
     @Test
     public void testCreate() throws WxErrorException {
         log.debug("Create WeChat Offical Account Menun Test");
-        log.debug("{}", topicsService.getTopic(Long.valueOf("1245")).get().getTitle());
+        log.debug("{}", postsService.getPost(Long.valueOf("1245")).get().getRaw());
 
 
     }

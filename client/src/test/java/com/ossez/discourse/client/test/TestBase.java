@@ -4,6 +4,8 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.ossez.discourse.client.DiscourseClient;
+import com.ossez.discourse.client.service.PostsService;
+import com.ossez.discourse.client.service.TopicsService;
 import org.apache.commons.lang3.ObjectUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.slf4j.Logger;
@@ -42,6 +44,14 @@ public class TestBase {
                 DiscourseClient.site_url = prop.getProperty("api.site.url");
                 DiscourseClient.api_username = prop.getProperty("api.username");
                 DiscourseClient.api_key = prop.getProperty("api.key");
+
+                // TopicsService
+                TopicsService topicsService = new TopicsService(DiscourseClient.site_url, DiscourseClient.api_username, DiscourseClient.api_key);
+                bind(TopicsService.class).toInstance(topicsService);
+
+                // TopicsService
+                PostsService postsService = new PostsService(DiscourseClient.site_url, DiscourseClient.api_username, DiscourseClient.api_key);
+                bind(PostsService.class).toInstance(postsService);
 
                 // Init WeChat config for testing
 //                Document document = new SAXReader().read(inputStream);

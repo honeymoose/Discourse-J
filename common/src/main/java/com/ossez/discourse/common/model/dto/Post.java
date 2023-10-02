@@ -11,8 +11,8 @@ public class Post {
     private String avatarTemplate;
     private String createdAt;
     private String cooked;
-    private String postNumber;
-    private String postType;
+    private Integer postNumber;
+    private Integer postType;
     private String updatedAt;
     private Integer replyCount;
     private String replyToPostNumber;
@@ -79,19 +79,19 @@ public class Post {
         this.cooked = cooked;
     }
 
-    public String getPostNumber() {
+    public Integer getPostNumber() {
         return postNumber;
     }
 
-    public void setPostNumber(String postNumber) {
+    public void setPostNumber(Integer postNumber) {
         this.postNumber = postNumber;
     }
 
-    public String getPostType() {
+    public Integer getPostType() {
         return postType;
     }
 
-    public void setPostType(String postType) {
+    public void setPostType(Integer postType) {
         this.postType = postType;
     }
 

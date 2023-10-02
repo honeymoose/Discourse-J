@@ -2,6 +2,7 @@ package com.ossez.discourse.client.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.ossez.discourse.client.DiscourseClient;
 import com.ossez.discourse.common.model.dto.Post;
 import com.ossez.discourse.common.model.dto.Topics;
@@ -48,6 +49,7 @@ public class PostsService extends DiscourseClient {
 
             if (response.code() == HttpStatus.SC_OK) {
                 objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+                objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
                 post = Optional.of(objectMapper.readValue(responseStr, Post.class));
             }
         } catch (IOException e) {

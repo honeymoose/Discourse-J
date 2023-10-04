@@ -2,8 +2,12 @@ package com.ossez.discourse.common.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class Topic {
 
+    private PostStream postStream;
+    private List<List<Integer>> timelineLookup;
     @JsonProperty(value = "id", required = true)
     private Long id;
     @JsonProperty(required = true)
@@ -40,6 +44,22 @@ public class Topic {
     private Integer highestPostNumber;
     private String deletedBy;
     private Boolean hasDeleted;
+
+    public PostStream getPostStream() {
+        return postStream;
+    }
+
+    public void setPostStream(PostStream postStream) {
+        this.postStream = postStream;
+    }
+
+    public List<List<Integer>> getTimelineLookup() {
+        return timelineLookup;
+    }
+
+    public void setTimelineLookup(List<List<Integer>> timelineLookup) {
+        this.timelineLookup = timelineLookup;
+    }
 
     public Long getId() {
         return id;

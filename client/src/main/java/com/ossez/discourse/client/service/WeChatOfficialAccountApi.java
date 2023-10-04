@@ -5,7 +5,7 @@ import com.ossez.discourse.common.model.WeChatStatus;
 import com.ossez.discourse.common.model.req.CustomMessage;
 import com.ossez.discourse.common.model.req.DataCubeRequest;
 import com.ossez.discourse.common.model.req.NetworkCheck;
-import com.ossez.discourse.common.model.req.QueryQuota;
+import com.ossez.discourse.common.model.dto.PostUpdate;
 import com.ossez.discourse.common.model.res.DataCubeArticle;
 import com.ossez.discourse.common.model.res.DataCubeUser;
 import com.ossez.discourse.common.model.res.NetworkCheckResponse;
@@ -27,7 +27,7 @@ public interface WeChatOfficialAccountApi {
     Single<NetworkCheckResponse> clearQuota(@Body NetworkCheck request);
 
     @POST("/cgi-bin/openapi/quota/get")
-    Single<QueryQuotaResponse> queryQuota(@Body QueryQuota request);
+    Single<QueryQuotaResponse> queryQuota(@Body PostUpdate request);
 
     @POST("/cgi-bin/message/custom/send")
     Single<WeChatStatus> sendMessage(@Body CustomMessage customMessage);

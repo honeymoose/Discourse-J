@@ -26,6 +26,7 @@ public class TestBase {
     public static final Long DISCOURSE_POST_ID = 594L;
     public static final Long DISCOURSE_TOPIC_ID = 570L;
     public static final String DISCOURSE_TOPIC_TITLE = "ZCHub Discourse API Test";
+    public static final String DISCOURSE_TOPIC_CONTENT = "ZCHub Discourse API Test";
     public static final String DISCOURSE_TOPIC_TITLE_CREATE = "ZCHub Discourse API Test - CREATE";
 
     @BeforeAll

@@ -47,7 +47,7 @@ public class Topic {
     private List<ActionsSummary> actionsSummary;
     private Integer chunkSize;
     private Boolean bookmarked;
-    private String bookmarks;
+    private List<String> bookmarks;
     private String topicTimer;
     private Long messageBus_LastId;
     private Integer participantCount;
@@ -369,11 +369,11 @@ public class Topic {
         this.bookmarked = bookmarked;
     }
 
-    public String getBookmarks() {
+    public List<String> getBookmarks() {
         return bookmarks;
     }
 
-    public void setBookmarks(String bookmarks) {
+    public void setBookmarks(List<String> bookmarks) {
         this.bookmarks = bookmarks;
     }
 

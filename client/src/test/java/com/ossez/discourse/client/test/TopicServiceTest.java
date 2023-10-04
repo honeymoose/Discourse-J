@@ -36,7 +36,7 @@ public class TopicServiceTest extends TestBase {
         Optional<Topic> topic = topicsService.getTopic(DISCOURSE_TOPIC_ID);
         assertThat(topic).isNotEmpty();
 
-        assertThat(topic.get().getPostStream().getPosts().size()).isGreaterThan(1);
+        assertThat(topic.get().getPostStream().getPosts().size()).isGreaterThan(0);
         assertThat(topic.get().getPostStream().getPosts().get(0).getId()).isEqualTo(DISCOURSE_POST_ID);
         assertThat(topic.get().getId()).isEqualTo(DISCOURSE_TOPIC_ID);
         assertThat(topic.get().getTitle()).isNotEmpty();

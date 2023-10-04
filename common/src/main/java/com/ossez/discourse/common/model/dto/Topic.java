@@ -44,6 +44,18 @@ public class Topic {
     private Integer highestPostNumber;
     private String deletedBy;
     private Boolean hasDeleted;
+    private List<ActionsSummary> actionsSummary;
+    private Integer chunkSize;
+    private Boolean bookmarked;
+    private String bookmarks;
+    private String topicTimer;
+    private Long messageBus_LastId;
+    private Integer participantCount;
+    private Boolean showReadIndicator;
+    private String thumbnails;
+    private String slowModeEnabledUUntil;
+    private Boolean summarizable;
+
 
     public PostStream getPostStream() {
         return postStream;
@@ -331,6 +343,94 @@ public class Topic {
 
     public void setHasDeleted(Boolean hasDeleted) {
         this.hasDeleted = hasDeleted;
+    }
+
+    public List<ActionsSummary> getActionsSummary() {
+        return actionsSummary;
+    }
+
+    public void setActionsSummary(List<ActionsSummary> actionsSummary) {
+        this.actionsSummary = actionsSummary;
+    }
+
+    public Integer getChunkSize() {
+        return chunkSize;
+    }
+
+    public void setChunkSize(Integer chunkSize) {
+        this.chunkSize = chunkSize;
+    }
+
+    public Boolean getBookmarked() {
+        return bookmarked;
+    }
+
+    public void setBookmarked(Boolean bookmarked) {
+        this.bookmarked = bookmarked;
+    }
+
+    public String getBookmarks() {
+        return bookmarks;
+    }
+
+    public void setBookmarks(String bookmarks) {
+        this.bookmarks = bookmarks;
+    }
+
+    public String getTopicTimer() {
+        return topicTimer;
+    }
+
+    public void setTopicTimer(String topicTimer) {
+        this.topicTimer = topicTimer;
+    }
+
+    public Long getMessageBus_LastId() {
+        return messageBus_LastId;
+    }
+
+    public void setMessageBus_LastId(Long messageBus_LastId) {
+        this.messageBus_LastId = messageBus_LastId;
+    }
+
+    public Integer getParticipantCount() {
+        return participantCount;
+    }
+
+    public void setParticipantCount(Integer participantCount) {
+        this.participantCount = participantCount;
+    }
+
+    public Boolean getShowReadIndicator() {
+        return showReadIndicator;
+    }
+
+    public void setShowReadIndicator(Boolean showReadIndicator) {
+        this.showReadIndicator = showReadIndicator;
+    }
+
+    public String getThumbnails() {
+        return thumbnails;
+    }
+
+    public void setThumbnails(String thumbnails) {
+        this.thumbnails = thumbnails;
+    }
+
+    public String getSlowModeEnabledUUntil() {
+        return slowModeEnabledUUntil;
+    }
+
+    public void setSlowModeEnabledUUntil(String slowModeEnabledUUntil) {
+        this.slowModeEnabledUUntil = slowModeEnabledUUntil;
+    }
+
+    public Boolean getSummarizable() {
+        return summarizable;
+    }
+
+    public void setSummarizable(Boolean summarizable) {
+        this.summarizable = summarizable;
     }
 }
 

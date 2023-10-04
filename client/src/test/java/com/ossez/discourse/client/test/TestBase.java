@@ -23,6 +23,8 @@ import java.util.Properties;
 public class TestBase {
     private static final Logger log = LoggerFactory.getLogger(TestBase.class);
     private static final String TEST_CONFIG_PROPERTIES= "test-config.properties";
+    public static final Long DISCOURSE_POST_ID = 594L;
+    public static final Long DISCOURSE_TOPIC_ID = 570L;
 
     @BeforeAll
     public void setup() {

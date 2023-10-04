@@ -17,6 +17,27 @@
     <name>Discourse Java Common</name>
     <description>The module is common for all other package</description>
 
+    <licenses>
+        <license>
+            <name>The MIT license</name>
+            <url>https://opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <distributionManagement>
+        <repository>
+            <id>ossez-repo</id>
+            <url>https://repo.ossez.com/repository/maven-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>ossez-repo</id>
+            <url>https://repo.ossez.com/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
     <dependencies>
         <dependency>
             <groupId>org.jodd</groupId>
@@ -125,9 +146,13 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
         </dependency>
+
+        <!-- TESTS -->
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>

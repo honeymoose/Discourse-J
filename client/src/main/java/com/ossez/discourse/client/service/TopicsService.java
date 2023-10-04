@@ -2,7 +2,7 @@ package com.ossez.discourse.client.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ossez.discourse.common.model.dto.Topics;
+import com.ossez.discourse.common.model.dto.Topic;
 import com.ossez.discourse.client.DiscourseClient;
 import okhttp3.*;
 import org.apache.http.HttpStatus;
@@ -30,10 +30,10 @@ public class TopicsService extends DiscourseClient {
         DiscourseClient.api_key = apiKey;
     }
 
-    public Optional<Topics> getTopic(Long topicId) {
+    public Optional<Topic> getTopic(Long topicId) {
         String path = "t/" + String.valueOf(topicId) + ".json";
 
-        Optional<Topics> discourseTopic = Optional.ofNullable(new Topics());
+        Optional<Topic> discourseTopic = Optional.ofNullable(new Topic());
         try {
             Response response = client.newCall(getRequest(path)).execute();
 
@@ -42,7 +42,7 @@ public class TopicsService extends DiscourseClient {
             if (response.code() == HttpStatus.SC_OK) {
                 ObjectMapper objectMapper = new ObjectMapper();
                 objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                discourseTopic = Optional.of(objectMapper.readValue(responseStr, Topics.class));
+                discourseTopic = Optional.of(objectMapper.readValue(responseStr, Topic.class));
 
             }
 

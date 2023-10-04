@@ -1,11 +1,9 @@
 package com.ossez.discourse.client.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.ossez.discourse.client.DiscourseClient;
 import com.ossez.discourse.common.model.dto.Post;
-import com.ossez.discourse.common.model.dto.Topics;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
 import org.apache.http.HttpStatus;

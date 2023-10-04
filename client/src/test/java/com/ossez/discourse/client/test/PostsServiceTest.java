@@ -2,8 +2,7 @@ package com.ossez.discourse.client.test;
 
 import com.google.inject.Inject;
 import com.ossez.discourse.client.service.PostsService;
-import com.ossez.discourse.client.service.TopicsService;
-import com.ossez.discourse.common.exception.WxErrorException;
+import com.ossez.discourse.common.exception.DiscourseErrorException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -24,10 +23,10 @@ public class PostsServiceTest extends TestBase {
     /**
      * Test Create Menu
      *
-     * @throws WxErrorException
+     * @throws DiscourseErrorException
      */
     @Test
-    public void testCreate() throws WxErrorException {
+    public void testCreate() throws DiscourseErrorException {
         log.debug("Create WeChat Offical Account Menun Test");
         log.debug("{}", postsService.getPost(Long.valueOf("1245")).get().getRaw());
 

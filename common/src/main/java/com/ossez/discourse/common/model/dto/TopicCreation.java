@@ -1,23 +1,14 @@
-package com.ossez.discourse.common.model.req;
+package com.ossez.discourse.common.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.gson.annotations.SerializedName;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 
-/**
- * CustomMessage
- *
- * @author YuCheng
- */
-public class DataCubeRequest implements Serializable {
-    private static final long serialVersionUID = -9196732086954365246L;
+public class TopicCreation extends Creation implements Serializable {
 
-    @NotNull
+    private static final long serialVersionUID = -8992308064707164065L;
+
+    @JsonProperty(required = true)
     private String title;
     private Integer category;
 
@@ -37,3 +28,5 @@ public class DataCubeRequest implements Serializable {
         this.category = category;
     }
 }
+
+

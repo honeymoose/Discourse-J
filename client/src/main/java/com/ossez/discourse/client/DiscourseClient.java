@@ -4,6 +4,7 @@ package com.ossez.discourse.client;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.HttpUrl;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 
 /**
  *
@@ -20,6 +21,16 @@ public abstract class DiscourseClient {
                 .addHeader("api-key", api_key)
                 .build();
 
+        return request;
+    }
+
+    public Request postRequest(String path, RequestBody body) {
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(site_url + path).newBuilder();
+        Request request = new Request.Builder().url(urlBuilder.build().toString())
+                .addHeader("api-username", api_username)
+                .addHeader("api-key", api_key)
+                .post(body)
+                .build();
         return request;
     }
 

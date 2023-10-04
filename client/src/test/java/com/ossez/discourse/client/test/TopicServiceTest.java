@@ -2,8 +2,9 @@ package com.ossez.discourse.client.test;
 
 import com.google.inject.Inject;
 import com.ossez.discourse.client.service.TopicsService;
-import com.ossez.discourse.common.exception.WxErrorException;
+import com.ossez.discourse.common.exception.DiscourseErrorException;
 import com.ossez.discourse.common.model.dto.Topic;
+import com.ossez.discourse.common.model.dto.TopicCreation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -28,10 +29,10 @@ public class TopicServiceTest extends TestBase {
     /**
      * Test Create Menu
      *
-     * @throws WxErrorException
+     * @throws DiscourseErrorException
      */
     @Test
-    public void testCreate() throws WxErrorException {
+    public void testGetTopic() throws DiscourseErrorException {
         log.debug("Create WeChat Offical Account Menun Test");
         Optional<Topic> topic = topicsService.getTopic(DISCOURSE_TOPIC_ID);
         assertThat(topic).isNotEmpty();
@@ -43,6 +44,25 @@ public class TopicServiceTest extends TestBase {
         log.debug("{}", topic.get().getTitle());
 
 
+    }
+
+    @Test
+    public void testCreateTopic() throws DiscourseErrorException {
+//        log.debug("Create Discourse Topic for Testing");
+//        TopicCreation topicCreation = new TopicCreation();
+//        topicCreation.setTitle(DISCOURSE_TOPIC_TITLE_CREATE);
+//        topicCreation.setCategory(3);
+//        topicCreation.setRaw(DISCOURSE_TOPIC_TITLE_CREATE);
+//
+//        Optional<Topic> topic = topicsService.createTopic(topicCreation);
+//        assertThat(topic).isNotEmpty();
+//
+//        log.debug("Created Topic Id - [{}]", topic.get().getId());
+//
+//        assertThat(topic.get().getId()).isGreaterThan(0);
+//        assertThat(topic.get().getPostStream().getPosts().get(0).getId()).isGreaterThan(0);
+//        assertThat(topic.get().getTitle()).isEqualTo(DISCOURSE_TOPIC_TITLE_CREATE);
+//        log.debug("{}", topic.get().getTitle());
     }
 
 }

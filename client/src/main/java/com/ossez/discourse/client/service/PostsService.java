@@ -53,7 +53,7 @@ public class PostsService extends DiscourseClient {
 
             if (response.code() == HttpStatus.SC_OK) {
                 objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+//                objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
                 post = Optional.of(objectMapper.readValue(responseStr, Post.class));
             }
         } catch (IOException e) {

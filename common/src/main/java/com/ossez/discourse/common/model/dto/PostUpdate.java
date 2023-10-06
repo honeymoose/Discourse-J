@@ -1,6 +1,8 @@
 package com.ossez.discourse.common.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import java.io.Serializable;
 
@@ -9,6 +11,7 @@ import java.io.Serializable;
  *
  * @author YuCheng Hu
  */
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class PostUpdate implements Serializable {
 
     private static final long serialVersionUID = -227183546475863573L;

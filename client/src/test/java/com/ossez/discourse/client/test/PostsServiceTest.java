@@ -31,7 +31,7 @@ public class PostsServiceTest extends TestBase {
      * @throws DiscourseErrorException
      */
     @Test
-    public void testCreatePost() throws DiscourseErrorException {
+    public void testGetPost() throws DiscourseErrorException {
         log.debug("Create WeChat Offical Account Menun Test");
         log.debug("{}", postsService.getPost(Long.valueOf("1245")).get().getRaw());
 
